@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Pinteresting::Application.config.secret_key_base = 'e2fbe20d35375b2de1b07a4e2dc1629a307cae13a1b6ba4ac9c6759f78e935f75ad21e28e75b4858aaa7798cfa38b93e9c66d54f71fa5e3b46836d99f158db00'
+Questbook::Application.config.secret_key_base = 'e2fbe20d35375b2de1b07a4e2dc1629a307cae13a1b6ba4ac9c6759f78e935f75ad21e28e75b4858aaa7798cfa38b93e9c66d54f71fa5e3b46836d99f158db00'
