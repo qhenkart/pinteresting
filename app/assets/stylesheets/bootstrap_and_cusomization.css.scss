@@ -7,14 +7,29 @@ $navbar-inverse-link-color: white;
 $navbar-height:							35px;
 $brand-primary: 						#e74c3c;
 $jumbotron-bg: 							#bdc3c7;
-
+$modal-header-border-color:	#9b59b6;
 
 @import 'bootstrap';
 
+/*.modal{
+  keyboard: true;
+  role:"dialog";
+  aria-labelledby: "button_one";
+  aria-labelledby: "button_two";
+  aria-hidden:"true";
+}*/
+
+.redcolor {
+	$jumbotron-bg: 							#bdc3c7;
+}
 .center {
 	text-align: center;
 }
 
 .navbar-brand {
 	font-weight:bold;
+}
+
+.pomegranite {
+	color: #c0392b;
 }
