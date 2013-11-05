@@ -29,4 +29,7 @@ Questbook::Application.configure do
   
   #required for Heroku
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+#required for paperclip
+  Paperclip.options[:command_path] = "/usr/local/bin/convert"
 end

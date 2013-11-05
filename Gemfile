@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '~> 3.0.1.0.rc'
 gem 'rename'
 gem "devise", "~> 3.1.1"
+gem "paperclip", "~> 3.0"
 
 group :development, :test do
 	gem 'sqlite3'
