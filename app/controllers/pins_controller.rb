@@ -1,5 +1,7 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
 
   def index
@@ -11,14 +13,14 @@ class PinsController < ApplicationController
 
 
   def new
-    @pin = Pin.new
+    @pin = current_user.pins.build
   end
 
   def edit
   end
 
   def create
-    @pin = Pin.new(pin_params)
+    @pin = current_user.pins.build(pin_params)
 
       if @pin.save
         redirect_to @pin, notice: 'Pin was successfully created.' 
@@ -35,7 +37,6 @@ class PinsController < ApplicationController
     else
       render action: 'edit' 
     end
-  
   end
 
  
@@ -51,6 +52,10 @@ class PinsController < ApplicationController
       @pin = Pin.find(params[:id])
     end
 
+    def correct_user
+      @pin = current_user.pins.find_by(id: params[:id])
+      redirect_to pins_path, notice: "Not authorized to Edit this pin" if @pin.nil?
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
       params.require(:pin).permit(:description)
